@@ -1,0 +1,18 @@
+   string[] line = _lines[i].Split(',');
+                if (!Double.TryParse(_lines[i], out number))
+                {
+                    numbers.Add(i + 1);
+                    continue;
+                }
+                else
+                {
+                    for (int j = 0; j < line.Length; j++)
+                    {
+                        sum += Int32.Parse(line[j]);
+                        if (sum > max)
+                        {
+                            max = sum;
+                            maxRowIndex = j + 1;
+                        }
+                    }
+                }

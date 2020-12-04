@@ -6,7 +6,22 @@ namespace MaxSumItems
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            if (args.Length == 0)
+            {
+                Console.WriteLine("Enter Path");
+                var path = @"" + Console.ReadLine();
+                UserFile userFile = new UserFile(path);
+                Reader reader = new Reader(userFile);
+                reader.Read();
+
+            }
+            foreach (var path in args)
+            {
+                UserFile userFile = new UserFile(path);
+                Reader reader = new Reader(userFile);
+                reader.Read();
+            }
+
         }
     }
 }
